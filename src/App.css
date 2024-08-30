@@ -12,7 +12,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   width: 400px;
   margin-top: 20px;
 }
@@ -29,6 +29,7 @@ body{
     color: white;
     margin-top: 15px;
     padding: 5px 10px;
+    cursor: pointer;
 
 }
 .todo-button:hover{
@@ -37,4 +38,16 @@ body{
   border: 1px solid aqua;
   transition: all 0.2s;
   font-weight: 500;
+}
+.add-todo{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border: 1px solid lightcyan;
+  padding: 12px 5px;
+}
+.icon{
+  margin-right: 4px;
+  font-size: 20px;
+  cursor: pointer;
 }

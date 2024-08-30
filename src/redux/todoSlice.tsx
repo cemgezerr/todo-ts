@@ -14,12 +14,19 @@ export const todoSlice = createSlice({
     reducers:{
             createTodo : (state:TodoİnitialState,action:PayloadAction<TodoType>) => {
                 state.todos = [...state.todos, action.payload]
+            },
+            removeTodoById: (state:TodoİnitialState, action:PayloadAction<Number>) => {
+               state.todos = [...state.todos.filter((todo:TodoType)=> todo.id !== action.payload)] 
+            },
+            updateTodo:(state:TodoİnitialState,action:PayloadAction<TodoType>) =>{
+                state.todos  = [...state.todos.map((todo:TodoType)=>(
+                    todo.id !== action.payload.id ? todo : action.payload
+                ))]
             }
     }
-
 })
 
 
-export const {createTodo } = todoSlice.actions
+export const {createTodo ,removeTodoById,updateTodo} = todoSlice.actions
 
 export default todoSlice.reducer
